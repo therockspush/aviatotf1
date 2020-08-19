@@ -1,7 +1,7 @@
 provider "aviatrix" {
   controller_ip = "3.217.242.214"
   username = "admin"
-  password = "var.password"
+  password = var.password
   }
   
 resource "aviatrix_account" "temp_acc_awsgov" {
