@@ -4,6 +4,7 @@ provider "aviatrix" {
   password = var.password
   }
   
+/*
 resource "aviatrix_vpc" "default" {
   cloud_type           = 1
   name                 = "vpc-transit-${var.region}"
@@ -13,3 +14,15 @@ resource "aviatrix_vpc" "default" {
   aviatrix_firenet_vpc = false
   aviatrix_transit_vpc = true
 }
+*/
+  
+resource "aviatrix_spoke_gateway" "test_spoke" {
+  cloud_type         = 1
+  account_name       = "flottAWS"
+  gw_name            = "awsspokegw"
+  vpc_id             = "vpc-00850a5e2a242fbce"
+  vpc_reg            = "us-west-2"
+  gw_size            = "t2.micro"
+  subnet             = "10.10.59.112/28"
+  enable_snat        = false
+  enable_active_mesh = true
