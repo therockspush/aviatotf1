@@ -24,6 +24,5 @@ resource "aviatrix_spoke_gateway" "test_spoke" {
   vpc_reg            = "us-west-2"
   gw_size            = "t2.micro"
   subnet             = "10.10.59.112/28"
-  enable_snat        = false
   enable_active_mesh = true
   }
